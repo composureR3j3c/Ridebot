@@ -1,0 +1,35 @@
+{
+  "name": "ridebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon Index.js",
+    "testApi": "nodemon ./src/createCase.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/composureR3j3c/Ridebot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/composureR3j3c/Ridebot/issues"
+  },
+  "homepage": "https://github.com/composureR3j3c/Ridebot#readme",
+  "dependencies": {
+    "axios": "^1.3.0",
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
+    "javascripting": "^2.4.0",
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7",
+    "pm2": "^5.2.0",
+    "ssl-root-cas": "^1.3.1",
+    "systemd": "^0.4.0"
+  }
+}
