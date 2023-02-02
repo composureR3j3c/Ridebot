@@ -1,6 +1,6 @@
-const { TOKEN, SERVER_URL } = process.env;
+const { TOKEN, DTOKEN,SERVER_URL } = process.env;
 const TELEGRAM_API = `https://api.telegram.org/bot${TOKEN}`;
-
+const DTELEGRAM_API = `https://api.telegram.org/bot${DTOKEN}`;
 const axios = require("axios");
 
 async function sendOrdinaryMessage(chatId, responseMessage, replyMessageID) {
@@ -28,7 +28,7 @@ async function sendLocationMessage(chatId, lat,lon) {
   }
   try {
      
-    await axios.post(`${TELEGRAM_API}/sendLocation`, {
+    await axios.post(`${DTELEGRAM_API}/sendLocation`, {
       chat_id: chatId,
       latitude:lat,
       longitude:lon,
@@ -41,16 +41,12 @@ async function sendContactMessage(chatId, responseMessage, replyMessageID) {
   if (responseMessage ==null || responseMessage =="") {
     return
   }
-  try {
+  try {  
      
-    await axios.post(`${TELEGRAM_API}/sendMessage`, {
+    await axios.post(`${DTELEGRAM_API}/sendMessage`, {
       chat_id: chatId,
       text: responseMessage,
-      reply_to_message_id: replyMessageID,
-      reply_markup: {
-        force_reply: true,
-        keyboard: [[{ text: "Order now" }], [{ text: "support" }]],
-      },
+     
     });
   } catch (e) {
     console.log(e);
